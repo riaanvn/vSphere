@@ -50,7 +50,7 @@ function Set-PerennialReservation {
     }
     Process {
         $Result = @()
-        $VMHosts = Get-cluster $cluster | get-vmhost
+        $VMHosts = Get-cluster $cluster | get-vmhost  | Sort-Object
         if ($CanonicalName) {
             $RDMs = $CanonicalName
         } else {
