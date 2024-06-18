@@ -42,7 +42,7 @@ function Remove-PerennialReservation {
     }
     Process {
         $removeoutput = @()
-        $VMHosts = Get-cluster $cluster | get-vmhost
+        $VMHosts = Get-cluster $cluster | get-vmhost | Sort-Object
         $RDMs = $CanonicalName
         Write-Output "Getting perennial reservation results for specified RDMs on $Cluster..."
         foreach ($VMHost in $VMHosts) {
